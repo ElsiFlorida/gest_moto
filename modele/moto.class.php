@@ -5,6 +5,10 @@ class Moto{
     private $cylindre;
     private $serie;
     private $marque;
+    private $disponibilite="stock";
+    private $nombre;
+    private $prix;
+
 
     function getmodele(){
         return $this->modele;
@@ -25,6 +29,17 @@ class Moto{
     function getmarque(){
         return $this->marque;
     }
+    function getdisponibilite(){
+        return $this->disponibilite;
+    }
+    function getnombre(){
+        return $this->nombre;
+    }
+
+    function getprix(){
+        return $this->prix;
+    }
+
 
     function setmodele($nouveaumodele){
         $this->modele = $nouveaumodele;
@@ -45,6 +60,16 @@ class Moto{
         function setmarque($nouveaumarque){
             $this->marque = $nouveaumarque;
         }
+        function setdisponibilite($disponibl){
+            $this->disponibilite = $disponibl;
+        }
+        function setdisponibilite($nb){
+            $this->nombre =$nb;
+        }
+
+        function setprix($nouveauprix){
+            $this->prix = $nouveauprix;
+            }
 
     function __construct($donnee=array()){
 
@@ -53,6 +78,9 @@ class Moto{
         $this->setcylindre($donnee["cylindre"]);
         $this->setserie($donnee["serie"]);
         $this->set($donnee["marque"]);
+        $this->setdisponibilite($donnee["disponibilite"]);
+        $this->setnombre($donnee["nombre"]);
+        $this->setprix($donnee["prix"]);
     }
     
 }
