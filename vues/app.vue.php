@@ -20,10 +20,10 @@ if(isset($_SESSION['nom_prenom']))
     <section class=".mainrow row h-100">
       <aside class="as col-md-1 bg-info p-0">
         <ul class="p-3">
-          <li class="mt-5 li "><a class=" menu-item fa fa-plus d-flex flex-column justify-content-center" href=""></a></li>
-          <li class="mt-5 li "><a class=" menu-item fa fa-motorcycle d-flex flex-column justify-content-center" href=""></a></li>
-          <li class="mt-5 li "><a class=" menu-item fa fa-money d-flex flex-column justify-content-center" href=""></a></li>
-          <li class="mt-5 li "><a class=" menu-item fa fa-sign-out d-flex flex-column justify-content-center" href=""></a></li>
+          <li class="mt-5 li "><a class=" menu-item fa fa-plus d-flex flex-column justify-content-center" href="index.php?page=ins_up"></a></li>
+          <li class="mt-5 li "><a class=" menu-item fa fa-motorcycle d-flex flex-column justify-content-center" href="index.php?page=liste"></a></li>
+          <li class="mt-5 li "><a class=" menu-item fa fa-money d-flex flex-column justify-content-center" href="index.php?page=vente"></a></li>
+          <li class="mt-5 li "><a class=" menu-item fa fa-sign-out d-flex flex-column justify-content-center" href="index.php?page="></a></li>
         </ul>
       </aside>
       <section class=" sect col-md-11 p-0">

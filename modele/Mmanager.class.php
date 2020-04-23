@@ -1,20 +1,19 @@
 <?php
-include_once("moto.class.php")
-class Manager{
+include_once("moto.class.php");
+class Mmanager{
     private $base;
-    private $motoclass;
-    function __construct($moto){
-        $this->motoclass=$moto; 
+    function __construct(){
+        $base=$GLOBALS["base"];
     }
 
     function getMarque($marque=""){
         $motoliste=[];
-        $get=$base->query("SELECT *,COUNT(marque) as nombre FROM moto");
+        $get=$this->base->query("SELECT *,COUNT(marque) as nombre FROM moto");
         if ($marque!=""){
-            $get=$base->prepare("SELECT * ,COUNT(marque) as nombre FROM moto WHERE marque=:mark");
-            $get->execute(array("mark"=>$marque));
+            $get=$this->base->prepare("SELECT * ,COUNT(marque) as nombre FROM moto WHERE marque=:mark");
+           $all=$get->execute(array("mark"=>$marque));
         }
-        while ($don=$get->fetch()) {
+        while ($don=$all->fetch()) {
             $moto=new Moto($don);
             $motoliste[]=$moto;
         }
@@ -23,10 +22,10 @@ class Manager{
 
     function get($serie){
         $tomo=$this->base->prepare("SELECT * FROM moto WHERE serie=:serie");
-        $tomo->execute(array(
+       $tom=$tomo->execute(array(
             "serie"=>$serie
         ));
-        return new Moto($tomo->fetch()); 
+        return new Moto($tom->fetch()); 
     }
 }
 
@@ -51,7 +50,7 @@ function misejour($motojour){
         "modeleM"=>$motojour->getmodele(),
         "couleurM"=>$motojour->getcouleur(),
         "cylindreM"=>$motojour->getcylindre(),
-        "disponibleM"=>$motojour->getdisponibilite()
+        "disponibleM"=>$motojour->getdisponibilite(),
         "serieM"=>$motojour->getserie(),
         "marqueM"=>$motojour->getmarque(),
         "prixM"=>$motojour->getprix()

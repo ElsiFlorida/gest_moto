@@ -9,7 +9,7 @@
       </div>
 
       <div class="form-group w-100">
-        <input type="password" class="form-control" placeholder="Model" name="model" value="<?php //echo $moto->getmodele()?>">
+        <input type="password" class="form-control" placeholder="Model" name="modele" value="<?php //echo $moto->getmodele()?>">
       </div>
 
       <div class="form-group w-100">
@@ -25,7 +25,7 @@
       </div>
 
       <div class="form-group w-100">
-        <input type="text" class="form-control" placeholder="Numero de seri" name="seri" value="<?php //echo $moto->getserie()?>">
+        <input type="text" class="form-control" placeholder="Numero de serie" name="serie" value="<?php //echo $moto->getserie()?>">
       </div>
 
       <div class="form-group w-100">

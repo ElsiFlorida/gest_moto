@@ -63,7 +63,7 @@ class Moto{
         function setdisponibilite($disponibl){
             $this->disponibilite = $disponibl;
         }
-        function setdisponibilite($nb){
+        function setnombre($nb){
             $this->nombre =$nb;
         }
 
@@ -72,7 +72,6 @@ class Moto{
             }
 
     function __construct($donnee=array()){
-
         $this->setmodele($donnee["modele"]);
         $this->setcouleur($donnee["couleur"]);
         $this->setcylindre($donnee["cylindre"]);
