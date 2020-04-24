@@ -5,7 +5,7 @@ class Db{
     $this->base=new PDO("mysql:host=localhost;dbname=gest_moto","root","");
    }
    function getBase(){
-   return $base;
+   return $this->base;
    }
 }
 

@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if(isset($_SESSION['nom_prenom']))
 {
   $nom=$_SESSION['nom_prenom'];
@@ -28,7 +26,7 @@ if(isset($_SESSION['nom_prenom']))
       </aside>
       <section class=" sect col-md-11 p-0">
         <header class="d-flex justify-content-end p-3 bg-danger">
-          <h4><?php echo $nom; ?></h4>
+          <h4><?php echo $_SESSION["nom"]; ?></h4>
         </header>
         <div class="">
           <?php include($contenu);?>

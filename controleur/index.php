@@ -1,11 +1,10 @@
 <?php
+session_start();
 include('../stylesheet.php');
 
 function auto($class){
 require_once("../modele/".$class.".class.php");
-echo $class;
 }
-
 spl_autoload_register("auto");
 
 $db=new Db();
