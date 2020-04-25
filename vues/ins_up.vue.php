@@ -3,29 +3,29 @@
 ?>
 <div class="d-flex h-100">
   <section class="col-md-6">
-    <form class="d-flex flex-column justify-content-between align-items-center form m-5 pt-5 pb-5" action="ins_up.php" method="post">
+    <form class="d-flex flex-column justify-content-between align-items-center form m-5 pt-5 pb-5" action="" method="post">
       <div class="form-group w-100">
-        <input type="text" class="form-control" placeholder="Marque" name="marque" value="<?php //echo $moto->getmarque()?>">
+        <input type="text" class="form-control" placeholder="Marque" name="marque" value="<?php echo oldValue($moto->getmarque())?>">
       </div>
 
       <div class="form-group w-100">
-        <input type="password" class="form-control" placeholder="Model" name="modele" value="<?php //echo $moto->getmodele()?>">
+        <input type="password" class="form-control" placeholder="Model" name="modele" value="<?php echo oldValue($moto->getmodele())?>">
       </div>
 
       <div class="form-group w-100">
-        <input type="text" class="form-control" placeholder="Prix" name="prix" value="<?php //echo $moto->getPrix()?>">
+        <input type="text" class="form-control" placeholder="Prix" name="prix" value="<?php echo oldValue($moto->getPrix())?>">
       </div>
 
       <div class="form-group w-100">
-        <input type="color" class="form-control" placeholder="Couleur" name="couleur" value="<?php //echo $moto->getcouleur()?>">
+        <input type="color" class="form-control" placeholder="Couleur" name="couleur" value="<?php echo oldValue($moto->getcouleur())?>">
       </div>
 
       <div class="form-group w-100">
-        <input type="text" class="form-control" placeholder="Cylindre" name="cylindre" value="<?php //echo $moto->getcylindre()?>">
+        <input type="text" class="form-control" placeholder="Cylindre" name="cylindre" value="<?php echo oldValue($moto->getcylindre())?>">
       </div>
 
       <div class="form-group w-100">
-        <input type="text" class="form-control" placeholder="Numero de serie" name="serie" value="<?php //echo $moto->getserie()?>">
+        <input type="text" class="form-control" placeholder="Numero de serie" name="serie" value="<?php echo oldValue($moto->getserie())?>">
       </div>
 
       <div class="form-group w-100">

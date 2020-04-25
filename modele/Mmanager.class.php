@@ -3,7 +3,7 @@ include_once("moto.class.php");
 class Mmanager{
     private $base;
     function __construct(){
-        $base=$GLOBALS["base"];
+        $this->base=$GLOBALS["base"];
     }
 
     function getMarque($marque=""){
@@ -11,9 +11,9 @@ class Mmanager{
         $get=$this->base->query("SELECT *,COUNT(marque) as nombre FROM moto");
         if ($marque!=""){
             $get=$this->base->prepare("SELECT * ,COUNT(marque) as nombre FROM moto WHERE marque=:mark");
-           $all=$get->execute(array("mark"=>$marque));
+           $get->execute(array("mark"=>$marque));
         }
-        while ($don=$all->fetch()) {
+        while ($don=$get->fetch()) {
             $moto=new Moto($don);
             $motoliste[]=$moto;
         }
@@ -22,15 +22,14 @@ class Mmanager{
 
     function get($serie){
         $tomo=$this->base->prepare("SELECT * FROM moto WHERE serie=:serie");
-       $tom=$tomo->execute(array(
+       $tomo->execute(array(
             "serie"=>$serie
         ));
-        return new Moto($tom->fetch()); 
+        return new Moto($tomo->fetch()); 
     }
-}
 
-function enregistrer($motoregister){
-    $inserer=$this->base->prepare("INSERT INTO moto (modele,couleur,cylindre,disponible,serie,marque,prix) VALUES(:modeleM,:couleurM,:cylindreM,:disponibleM,:serieM,:marqueM,:prixM)");
+ function enregistrer($motoregister){
+    $inserer=$this->base->prepare("INSERT INTO moto (modele,couleur,cylindre,disponibilite,numero_de_serie,marque,prix) VALUES(:modeleM,:couleurM,:cylindreM,:disponibleM,:serieM,:marqueM,:prixM)");
     $inserer->execute(array(
 
         "modeleM"=>$motoregister->getmodele(),
@@ -63,5 +62,6 @@ function supprimer($motodelete){
         "serie"=>$motodelete->getserie()
     ));
 }
-    
+
+}    
 ?>

@@ -1,13 +1,13 @@
 <?php
 class Moto{
-    private $modele;
-    private $couleur;
-    private $cylindre;
-    private $serie;
-    private $marque;
-    private $disponibilite="stock";
-    private $nombre;
-    private $prix;
+    private $modele="";
+    private $couleur="";
+    private $cylindre="";
+    private $serie="";
+    private $marque="";
+    private $disponibilite="";
+    private $nombre="";
+    private $prix="";
 
 
     function getmodele(){
@@ -72,14 +72,16 @@ class Moto{
             }
 
     function __construct($donnee=array()){
+        if(count($donnee)!=0){
         $this->setmodele($donnee["modele"]);
         $this->setcouleur($donnee["couleur"]);
         $this->setcylindre($donnee["cylindre"]);
-        $this->setserie($donnee["serie"]);
-        $this->set($donnee["marque"]);
+        $this->setserie($donnee["numero_de_serie"]);
+        $this->setmarque($donnee["marque"]);
         $this->setdisponibilite($donnee["disponibilite"]);
         $this->setnombre($donnee["nombre"]);
         $this->setprix($donnee["prix"]);
+        }
     }
     
 }

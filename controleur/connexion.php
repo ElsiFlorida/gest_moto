@@ -7,12 +7,11 @@ if($verif!=false){
     session_start();
     $_SESSION["nom"]=$verif["nom"]." ".$verif["prenom"];
      header("location:index.php?page=accueil");
-
 }
 else{
     header("location:index.php?page=connexion");
 }
-}
-include("../vues/connexion.vue.php");
+ }
+ include("../vues/connexion.vue.php");
 
 ?>
