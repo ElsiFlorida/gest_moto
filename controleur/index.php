@@ -6,7 +6,6 @@ function auto($class){
     echo $class;
 require_once("../modele/".$class.".class.php");
 }
-
 spl_autoload_register("auto");
 
 $db=new Db();

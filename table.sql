@@ -49,7 +49,11 @@ create table Vente
    prenom               varchar(255),
    somme                varchar(255),
    telephone            varchar(255),
+<<<<<<< HEAD
    primary key (numero_de_serie, Id)
+=======
+   primary key (Id)
+>>>>>>> master
 );
 
 alter table Vente add constraint FK_Generalisation_1 foreign key (numero_de_serie)

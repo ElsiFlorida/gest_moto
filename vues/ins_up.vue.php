@@ -9,7 +9,11 @@
       </div>
 
       <div class="form-group w-100">
+<<<<<<< HEAD
         <input type="password" class="form-control" placeholder="Model" name="modele" value="<?php echo oldValue($moto->getmodele())?>">
+=======
+        <input type="text" class="form-control" placeholder="Model" name="modele" value="<?php //echo $moto->getmodele()?>">
+>>>>>>> master
       </div>
 
       <div class="form-group w-100">
@@ -17,7 +21,11 @@
       </div>
 
       <div class="form-group w-100">
+<<<<<<< HEAD
         <input type="color" class="form-control" placeholder="Couleur" name="couleur" value="<?php echo oldValue($moto->getcouleur())?>">
+=======
+        <input type="text" class="form-control" placeholder="Couleur" name="couleur" value="<?php //echo $moto->getcouleur()?>">
+>>>>>>> master
       </div>
 
       <div class="form-group w-100">
@@ -25,7 +33,11 @@
       </div>
 
       <div class="form-group w-100">
+<<<<<<< HEAD
         <input type="text" class="form-control" placeholder="Numero de serie" name="serie" value="<?php echo oldValue($moto->getserie())?>">
+=======
+        <input type="text" class="form-control" placeholder="Numero de serie" name="numero_de_serie" value="<?php //echo $moto->getserie()?>">
+>>>>>>> master
       </div>
 
       <div class="form-group w-100">

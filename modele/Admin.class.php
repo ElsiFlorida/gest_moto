@@ -12,12 +12,23 @@ class Admin{
         ));
         $adm=$aut->fetch();
         if(count($adm)!=0){
+<<<<<<< HEAD
              return $adm;
+=======
+            return $adm;
+>>>>>>> master
         }
         else{ 
          return false;
         }
     }
+}
+function changePassWork($newPass,$oldPass){
+    $change=$this->base->prepare("UPDATE admin SET mot_de_passe=:newpass WHERE mot_de_passe=:oldpass");
+    $change->execute(array(
+        "newpass"=>sha1($newPass),
+        "oldpass"=>sha1($oldPass)
+    ));
 }
 
 ?>

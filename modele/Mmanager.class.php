@@ -8,16 +8,32 @@ class Mmanager{
 
     function getMarque($marque=""){
         $motoliste=[];
-        $get=$this->base->query("SELECT *,COUNT(marque) as nombre FROM moto");
+        $get=$this->base->query("SELECT * FROM moto");
         if ($marque!=""){
             $get=$this->base->prepare("SELECT * ,COUNT(marque) as nombre FROM moto WHERE marque=:mark");
            $get->execute(array("mark"=>$marque));
         }
+<<<<<<< HEAD
         while ($don=$get->fetch()) {
             $moto=new Moto($don);
             $motoliste[]=$moto;
+=======
+        $don= $get->fetchAll();
+        foreach($don as $key=>$tom) {
+            $moto=new Moto($tom);
+            $motoliste[$key]=$moto;
+>>>>>>> master
         }
         return $motoliste;
+    }
+    function getNombre($marque=""){
+        $nb=$this->base->query("SELECT COUNT(marque) as nombre  FROM moto");
+        if ($marque!=""){
+            $nb=$this->base->prepare("SELECT COUNT(marque) as nombre FROM moto WHERE marque=:mark");
+            $nb->execute(array("mark"=>$marque));
+        }
+        $nomb=$nb->fetch();
+        return $nomb["nombre"];
     }
 
     function get($serie){
@@ -28,8 +44,14 @@ class Mmanager{
         return new Moto($tomo->fetch()); 
     }
 
+<<<<<<< HEAD
  function enregistrer($motoregister){
     $inserer=$this->base->prepare("INSERT INTO moto (modele,couleur,cylindre,disponibilite,numero_de_serie,marque,prix) VALUES(:modeleM,:couleurM,:cylindreM,:disponibleM,:serieM,:marqueM,:prixM)");
+=======
+function enregistrer($motoregister){
+    print_r($motoregister);
+    $inserer=$this->base->prepare("INSERT INTO moto(modele,couleur,cylindre,disponibilite,numero_de_serie,marque,prix) VALUES(:modeleM,:couleurM,:cylindreM,:disponibleM,:serieM,:marqueM,:prixM)");
+>>>>>>> master
     $inserer->execute(array(
 
         "modeleM"=>$motoregister->getmodele(),
@@ -57,11 +79,15 @@ function misejour($motojour){
 }
 
 function supprimer($motodelete){
-    $supr=$this->base->prepare("DELETE FROM moto WHERE serie=:serieM");
+    $supr=$this->base->prepare("DELETE FROM moto WHERE numero_de_serie=:serieM");
     $supr->execute(array(
-        "serie"=>$motodelete->getserie()
+        "serieM"=>$motodelete
     ));
 }
+<<<<<<< HEAD
 
 }    
+=======
+} 
+>>>>>>> master
 ?>

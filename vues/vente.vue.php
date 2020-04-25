@@ -3,8 +3,8 @@
 ?>
 <div class="d-flex h-100">
   <section class="col-md-6">
-    <form class="d-flex flex-column justify-content-between align-items-center form m-5 pt-5 pb-5" action="ins_up.php" method="post">
-    <input type="text" hidden name="vserie" value="<?php //echo $moto->getmarque()?>">
+    <form class="d-flex flex-column justify-content-between align-items-center form m-5 pt-5 pb-5" action="" method="post">
+    <input type="text" hidden name="vserie" value="<?php echo $_GET["serie"]?>">
       <div class="form-group w-100">
         <input type="text" class="form-control" placeholder="Nom acheteur" name="vnom">
       </div>
