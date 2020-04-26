@@ -13,7 +13,6 @@ class Vente{
            "somme"=>$donnee["vsomme"],
            "telephone"=>$donnee["vtelephone"]
        ));
-
    }
 }
 ?>

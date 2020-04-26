@@ -3,7 +3,6 @@ session_start();
 include('../stylesheet.php');
 
 function auto($class){
-    echo $class;
 require_once("../modele/".$class.".class.php");
 }
 spl_autoload_register("auto");

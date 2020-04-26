@@ -13,19 +13,14 @@ class Mmanager{
             $get=$this->base->prepare("SELECT * ,COUNT(marque) as nombre FROM moto WHERE marque=:mark");
            $get->execute(array("mark"=>$marque));
         }
-<<<<<<< HEAD
-        while ($don=$get->fetch()) {
-            $moto=new Moto($don);
-            $motoliste[]=$moto;
-=======
         $don= $get->fetchAll();
         foreach($don as $key=>$tom) {
             $moto=new Moto($tom);
             $motoliste[$key]=$moto;
->>>>>>> master
         }
         return $motoliste;
     }
+    
     function getNombre($marque=""){
         $nb=$this->base->query("SELECT COUNT(marque) as nombre  FROM moto");
         if ($marque!=""){
@@ -37,21 +32,16 @@ class Mmanager{
     }
 
     function get($serie){
-        $tomo=$this->base->prepare("SELECT * FROM moto WHERE serie=:serie");
+        $tomo=$this->base->prepare("SELECT * FROM moto WHERE numero_de_serie=:serie");
        $tomo->execute(array(
             "serie"=>$serie
         ));
         return new Moto($tomo->fetch()); 
     }
 
-<<<<<<< HEAD
- function enregistrer($motoregister){
-    $inserer=$this->base->prepare("INSERT INTO moto (modele,couleur,cylindre,disponibilite,numero_de_serie,marque,prix) VALUES(:modeleM,:couleurM,:cylindreM,:disponibleM,:serieM,:marqueM,:prixM)");
-=======
 function enregistrer($motoregister){
     print_r($motoregister);
     $inserer=$this->base->prepare("INSERT INTO moto(modele,couleur,cylindre,disponibilite,numero_de_serie,marque,prix) VALUES(:modeleM,:couleurM,:cylindreM,:disponibleM,:serieM,:marqueM,:prixM)");
->>>>>>> master
     $inserer->execute(array(
 
         "modeleM"=>$motoregister->getmodele(),
@@ -65,7 +55,7 @@ function enregistrer($motoregister){
 }
 
 function misejour($motojour){
-    $modi=$this->base->prepare("UPDATE moto SET modele=:modeleM,couleur=:couleurM,cylindre=:cylindreM,disponible=disponibleM,marque=:marqueM,prix=:prixM WHERE serie=:serieM");
+    $modi=$this->base->prepare("UPDATE moto SET modele=:modeleM,couleur=:couleurM,cylindre=:cylindreM,disponibilite=:disponibleM,marque=:marqueM,numero_de_serie=:serieM,prix=:prixM WHERE numero_de_serie=:serieM");
     $modi->execute(array(
 
         "modeleM"=>$motojour->getmodele(),
@@ -84,10 +74,13 @@ function supprimer($motodelete){
         "serieM"=>$motodelete
     ));
 }
-<<<<<<< HEAD
 
-}    
-=======
+function stock_vente($statu){
+        $nb=$this->base->prepare("SELECT COUNT(marque) as nombre FROM moto WHERE disponibilite=:stat");
+        $nb->execute(array("stat"=>$statu));
+    $nomb=$nb->fetch();
+    return $nomb["nombre"];
+}
+
 } 
->>>>>>> master
 ?>

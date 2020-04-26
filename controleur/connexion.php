@@ -6,6 +6,7 @@ if($verif!=false){
 
     session_start();
     $_SESSION["nom"]=$verif["nom"]." ".$verif["prenom"];
+    $_SESSION["identifiant"]=$_POST["tel"];
      header("location:index.php?page=accueil");
 }
 else{

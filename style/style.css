@@ -1,5 +1,8 @@
-html,body,.contenair{
+body,.contenair{
     height: 100% !important;
+}
+html{
+    min-height: 100% !important;
 }
 /*.row{
  height: 100%;
@@ -20,7 +23,6 @@ html,body,.contenair{
     height: 100%;
 }
 
-
 /* vue formulaire*/
 .form-auth{
     box-shadow: 1px 1px 5px 1px gray;
@@ -33,4 +35,16 @@ html,body,.contenair{
 .form-auth div{
     width: 100%;
     padding: 5%;
+}
+/*accueil*/
+.accueil-nb {
+    font-size: 80px;
+    text-align: center;
+    box-shadow: 1px 1px 4px 4px gray;
+    margin: 1%;
+}
+
+.pass{
+    box-shadow: 1px 1px 4px 4px gray;
+    margin: 3%;
 }

@@ -6,10 +6,6 @@ class Moto{
     private $serie="";
     private $marque="";
     private $disponibilite="";
-<<<<<<< HEAD
-    private $nombre="";
-=======
->>>>>>> master
     private $prix="";
 
 
